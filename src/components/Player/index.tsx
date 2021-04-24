@@ -56,6 +56,13 @@ export function Player() {
                     <span>00:00</span>
                 </div>
             </footer>
+
+            { episode && (
+                <audio
+                    src={episode.url}
+                    autoPlay
+                />
+            )}
             
             <div className={styles.buttons}>
                 <button type="button" disabled={!episode}>
