@@ -9,6 +9,9 @@ import {GetStaticProps} from 'next'
 import { convertDurationToTimeString } from '../utils/convertDurationToTimeString'
 
 import styles from './home.module.scss'
+import { useContext } from 'react';
+import { Player } from '../components/Player';
+import { PlayerContext } from '../contexts/PlayerContext';
 
 type Episode = {
   id: string;
@@ -27,6 +30,7 @@ type HomeProps = {
 }
 
 export default function Home({latestEpisodes, allEpisodes} : HomeProps) {
+  const player = useContext(PlayerContext)
 
   return (
     <div className={styles.homepage}>
